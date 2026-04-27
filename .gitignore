@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+
+# uv
+.python-version
+
+# mypy
+.mypy_cache/
+
+# ruff
+.ruff_cache/
+
+# pytest
+.pytest_cache/
+htmlcov/
+.coverage
+
+# env
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+
+# Docker
+.devcontainer/docker-compose.override.yml
