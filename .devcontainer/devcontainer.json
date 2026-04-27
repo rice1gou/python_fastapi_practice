@@ -1,0 +1,28 @@
+{
+  "name": "FastAPI Practice",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "be",
+  "workspaceFolder": "/app",
+  "postCreateCommand": "make init",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.mypy-type-checker",
+        "charliermarsh.ruff",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/app/.venv/bin/python",
+        "editor.formatOnSave": true,
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff",
+          "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "explicit"
+          }
+        }
+      }
+    }
+  }
+}
