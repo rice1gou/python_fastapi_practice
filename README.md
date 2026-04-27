@@ -1,3 +1,41 @@
+## 環境構築
+
+### 前提ツールのインストール
+
+**Docker Desktop**
+https://www.docker.com/products/docker-desktop/
+
+**VS Code + Remote Containers 拡張**
+https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
+
+**mise**
+
+```bash
+curl https://mise.run | sh
+```
+
+インストール後、`~/.zshrc` に以下を追加してシェルを再起動する。
+
+```bash
+eval "$(mise activate zsh)"
+```
+
+### セットアップ手順
+
+```bash
+# 1. リポジトリをクローン
+git clone <repository-url>
+cd python_fastapi_practice
+
+# 2. uv・make をインストール
+mise install
+
+# 3. VS Code でリポジトリを開き「Reopen in Container」を実行
+#    → コンテナ起動後に make init（uv sync）が自動で実行される
+```
+
+---
+
 ## 推奨成果物：タスク管理 API
 
 なぜタスク管理か
