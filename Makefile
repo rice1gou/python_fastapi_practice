@@ -2,7 +2,7 @@
 
 # ── ホスト側 ──────────────────────────────────────────────────────────────────
 shell:
-	docker compose -f .devcontainer/docker-compose.yml exec be bash -i
+	docker exec -it be bash -i
 
 # ── コンテナ内（初回セットアップ） ────────────────────────────────────────────
 init:
