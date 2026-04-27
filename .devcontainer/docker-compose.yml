@@ -1,0 +1,40 @@
+services:
+  be:
+    container_name: be
+    build:
+      context: ..
+      dockerfile: Dockerfile
+      target: dev
+    volumes:
+      - ..:/app
+    command: sleep infinity
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:password@db:5432/postgres
+
+  db:
+    container_name: db
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  fe:
+    image: your-registry/frontend:latest  # TODO: 実際のイメージURLに変更する
+    container_name: fe
+    profiles: ["frontend"]
+    ports:
+      - "3000:3000"
+
+volumes:
+  postgres_data:
