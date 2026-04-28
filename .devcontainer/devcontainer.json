@@ -13,10 +13,12 @@
         "ms-azuretools.vscode-docker"
       ],
       "settings": {
-        "python.defaultInterpreterPath": "/app/.venv/bin/python",
+        "python.defaultInterpreterPath": "/venv/bin/python",
         "ruff.importStrategy": "useBundled",
         "editor.formatOnSave": true,
         "[python]": {
+          "editor.tabSize": 4,
+          "editor.insertSpaces": true,
           "editor.defaultFormatter": "charliermarsh.ruff",
           "editor.codeActionsOnSave": {
             "source.fixAll.ruff": "explicit",
