@@ -2,7 +2,7 @@
 name: Epic
 about: 大きな機能や取り組みのまとまり
 title: "[EPIC] "
-labels: epic
+labels: Epic
 assignees: ""
 ---
 
